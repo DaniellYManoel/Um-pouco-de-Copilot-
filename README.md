@@ -21,3 +21,81 @@ Segundo prompt: "com textos mais facil de ser indentificados"
 ![_02dbe691-4a06-4ab2-8eaa-10471af8642e](https://github.com/user-attachments/assets/350c9e6f-3232-485f-91fe-1502d49166b5)
 
 
+### Extração do texto
+
+Para a estração do texto eu realizei este prompt: "como realiza o reconhecimento de texto dessa imagem"
+Ele deu 2 opções.
+
+##### 1 opção: Passos para Reconhecimento de Texto com Python e Tesseract
+
+- Instalar as Bibliotecas Necessárias:
+Primeiro, você precisa instalar o Tesseract e a biblioteca pytesseract no Python. Você também precisará do OpenCV para manipulação de imagens.
+
+-> pip install pytesseract opencv-python
+
+- Instalar o Tesseract:
+Baixe e instale o Tesseract OCR.
+
+- Código para Reconhecimento de Texto:
+Aqui está um exemplo de código em Python para realizar o reconhecimento de texto em uma imagem:
+
+=====================================================================================================
+
+import cv2
+import pytesseract
+
+#Configurar o caminho do Tesseract
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+#Carregar a imagem
+
+image = cv2.imread('caminho/para/sua/imagem.png')
+
+#Converter a imagem para escala de cinza
+
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+#Aplicar um limiar para binarizar a imagem
+
+_, binary_image = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
+
+#Usar o Tesseract para realizar o OCR
+
+text = pytesseract.image_to_string(binary_image, lang='por')
+
+#Exibir o texto reconhecido
+print(text)
+
+=====================================================================================================
+#### Explicação do Código:
+Importar Bibliotecas: Importamos cv2 para manipulação de imagens e pytesseract para OCR.
+Configurar o Caminho do Tesseract: Definimos o caminho onde o Tesseract está instalado.
+Carregar a Imagem: Carregamos a imagem que queremos processar.
+Converter para Escala de Cinza: Convertendo a imagem para escala de cinza para facilitar o processamento.
+Binarizar a Imagem: Aplicamos um limiar para binarizar a imagem, o que ajuda a melhorar a precisão do OCR.
+Realizar OCR: Usamos pytesseract.image_to_string para extrair o texto da imagem.
+Exibir o Texto: Finalmente, exibimos o texto reconhecido.
+
+#### 2 Opção: O site image to text
+Link do site que eu utilizei: https://www.imagetotext.io/pt Converter Imagem em Texto - Extrair Texto de Imagem (imagetotext.io)
+
+
+## Finalização 
+Foi esté o meu projeto do curso da DIO. Foi bem simples para mostrar um das muitas funcionalidade do copilot!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
